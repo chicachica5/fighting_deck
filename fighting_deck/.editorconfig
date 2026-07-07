@@ -1,0 +1,58 @@
+# Top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[*.cs]
+#### Core Dotnet Settings ####
+
+# Organize Usings
+dotnet_separate_import_directive_groups = true
+dotnet_sort_system_directives_first = true
+
+# Use 'var' when the type is apparent
+dotnet_style_qualification_for_field = false:silent
+dotnet_style_qualification_for_property = false:silent
+dotnet_style_require_accessor_牽 = true:suggestion
+
+#### C# Formatting Rules ####
+
+# Newline settings (Allman Style)
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+
+# Spacing
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+
+#### Naming Conventions ####
+
+# Interfaces must start with I
+dotnet_naming_rule.interface_should_be_begun_with_i.severity = suggestion
+dotnet_naming_rule.interface_should_be_begun_with_i.symbols = interface_types
+dotnet_naming_rule.interface_should_be_begun_with_i.style = beginning_i
+
+dotnet_naming_symbols.interface_types.applicable_kinds = interface
+
+dotnet_naming_style.beginning_i.required_prefix = I
+dotnet_naming_style.beginning_i.capitalization = pascal_case
+
+# Private fields use _camelCase
+dotnet_naming_rule.private_fields_with_underscore.severity = suggestion
+dotnet_naming_rule.private_fields_with_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_with_underscore.style = prefix_underscore
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.prefix_underscore.required_prefix = _
+dotnet_naming_style.prefix_underscore.capitalization = camel_case
